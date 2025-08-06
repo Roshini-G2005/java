@@ -1,1 +1,27 @@
+import java.util.*;
+
+public class AdamNumber {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        int a = scan.nextInt();
+          int sq = a * a;
+        int rev = 0, temp = a;
+        while (temp > 0) {
+            rev = (rev * 10) + (temp % 10);
+            temp = temp / 10;
+        }
+        int revSq = rev * rev;
+        int rev1 = 0, temp2 = revSq;
+        while (temp2 > 0) {
+            rev1 = (rev1 * 10) + (temp2 % 10);
+            temp2 = temp2 / 10;
+        }
+        if (rev1 == sq) {
+            System.out.println("Adam number");
+        } else {
+            System.out.println("Not Adam number");
+        }
+    }
+}
 
